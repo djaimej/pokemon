@@ -1,0 +1,42 @@
+:root {
+  --primary: #dc3545;
+  --primary-light: #dc3545aa;
+  --secondary: #ffc107;
+  --secondary-light: #ffc107aa;
+}
+
+$white: #fff !default;
+$gray-100: #e6e6e6 !default;
+$gray-200: #cccccc !default;
+$gray-300: #b3b3b3 !default;
+$gray-400: #999999 !default;
+$gray-500: #808080 !default;
+$gray-600: #666666 !default;
+$gray-700: #4c4c4c !default;
+$gray-800: #333333 !default;
+$gray-900: #191919 !default;
+$black: #000 !default;
+$grays: () !default;
+$grays: map-merge( ( "100": $gray-100, "200": $gray-200, "300": $gray-300, "400": $gray-400, "500": $gray-500, "600": $gray-600, "700": $gray-700, "800": $gray-800, "900": $gray-900), $grays);
+$blue: #0f5ca9 !default;
+$indigo: #4b0082 !default;
+$purple: #8442c1 !default;
+$pink: #e83e8c !default;
+$red: #dc3545 !default;
+$orange: #fd7e14 !default;
+$yellow: #ffc107 !default;
+$green: #28a745 !default;
+$teal: #20c997 !default;
+$cyan: #009999 !default;
+$colors: () !default;
+$colors: map-merge( ( "blue": $blue, "indigo": $indigo, "purple": $purple, "pink": $pink, "red": $red, "orange": $orange, "yellow": $yellow, "green": $green, "teal": $teal, "cyan": $cyan, "white": $white, "gray": $gray-500, "gray-dark": $gray-800), $colors);
+$primary: $red !default;
+$secondary: $yellow !default;
+$success: $green !default;
+$info: $blue !default;
+$warning: $yellow !default;
+$danger: $red !default;
+$light: $gray-100 !default;
+$dark: $gray-900 !default;
+$theme-colors: () !default;
+$theme-colors: map-merge( ( "primary": $primary, "secondary": $secondary, "success": $success, "info": $info, "warning": $warning, "danger": $danger, "light": $light, "dark": $dark), $theme-colors);

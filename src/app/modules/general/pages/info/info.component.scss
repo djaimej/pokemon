@@ -1,0 +1,31 @@
+.img-container {
+  img {
+    width: 100%;
+    height: fit-content;
+  }
+  display: flex;
+  justify-content: center;
+}
+
+.poke-info {
+  width: 60%;
+  height: 80vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.back-btn-container {
+  width: 100vw;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 3rem;
+  background-color: white;
+  z-index: 100;
+}
+
+@media (max-height: 800px) and (max-width: 768px) {
+  .scroll {
+    height: 90vh;
+  }
+}

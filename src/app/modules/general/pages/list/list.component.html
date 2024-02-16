@@ -1,0 +1,45 @@
+<div class="text-center p-2">
+  <b class="fs-5">POKEMON LIST</b>
+</div>
+<div class="row">
+  <div class="col d-flex justify-content-center">
+    <div class="poke-list">
+      <table class="table text-uppercase table-borderless">
+        <thead>
+            <tr>
+              <th scope="col"></th>
+              <th scope="col">Name</th>
+              <th scope="col">Info</th>
+            </tr>
+        </thead>
+        <tbody>
+          @for (result of results | slice: (page-1) * limit : page * limit; track result) {
+            <tr>
+              <td>
+                <img [src]="result.url | image" [alt]=" result.name" style="width: 40px; margin: -10px;"/>
+              </td>
+              <td>
+                {{ result.name }}
+              </td>
+              <td>
+                <button (click)="viewInfo(result.url)" class="btn btn-sm btn-dark" type="button">VIEW</button>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-12">
+    <ngb-pagination class="d-flex justify-content-center"
+      [(page)]="page"
+      [pageSize]="limit"
+      [collectionSize]="151"
+      [maxSize]="paginationMaxSize"
+      [rotate]="true"
+      [ellipses]="false"
+      [boundaryLinks]="true" />
+  </div>
+</div>

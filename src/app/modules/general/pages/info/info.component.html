@@ -1,0 +1,37 @@
+<div class="text-center p-2">
+  <b class="fs-5">POKEMON INFO</b>
+</div>
+<ng-container *ngIf="info">
+  <div class="row">
+    <div class="col d-flex justify-content-center">
+      <div class="poke-info">
+        <div class="scroll">
+          <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-12" >
+              <div class="img-container">
+                <img [src]="info.sprites.other.home.front_default" alt="">
+              </div>
+            </div>
+            <div class="col-lg-8 col-md-6 col-sm-12">
+              <ul class="list-group list-group-flush text-uppercase text-start">
+                <li class="list-group-item"><b>name:</b> {{info.name}}</li>
+                <li class="list-group-item"><b>height:</b> {{info.height}}</li>
+                <li class="list-group-item"><b>weight:</b> {{info.weight}}</li>
+                <li class="list-group-item"><b>base experience:</b> {{info.base_experience}}</li>
+                <li class="list-group-item"><b>abilities:</b>
+                  <span *ngFor="let ability of info.abilities; let i = index">
+                    {{ability.ability.name}}{{i === info.abilities.length -1 ? '' : ',&nbsp;' }}
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>
+
+<div class="back-btn-container">
+  <button (click)="back()" class="btn btn-primary btn-sm mt-2" type="button">BACK</button>
+</div>
