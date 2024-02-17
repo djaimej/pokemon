@@ -23,6 +23,9 @@
                     {{ability.ability.name}}{{i === info.abilities.length -1 ? '' : ',&nbsp;' }}
                   </span>
                 </li>
+                <li class="list-group-item">
+                  <button (click)="back()" class="btn btn-primary btn-sm mt-2" type="button">RETURN</button>
+                </li>
               </ul>
             </div>
           </div>
@@ -31,7 +34,3 @@
     </div>
   </div>
 </ng-container>
-
-<div class="back-btn-container">
-  <button (click)="back()" class="btn btn-primary btn-sm mt-2" type="button">BACK</button>
-</div>

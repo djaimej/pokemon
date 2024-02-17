@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Result } from '@interfaces/result';
 import { PokemonService } from '@services/pokemon.service';
@@ -25,7 +25,7 @@ export class ListComponent implements OnInit {
     this.limit = 9;
     this.offset = 0;
     this.page = 1;
-    this.paginationMaxSize = window.innerWidth > 375 ? 5 : 3;
+    this.paginationMaxSize = window.innerWidth > 500 ? 5 : 3;
     this.activatedRoute.queryParams
       .subscribe(params => {
         this.page = params['page'] ? params['page'] : this.page;
@@ -46,6 +46,11 @@ export class ListComponent implements OnInit {
         })
       }
     });
+  }
+
+  @HostListener('window:resize')
+  onResize() {
+    this.paginationMaxSize = window.innerWidth > 500 ? 5 : 3;
   }
 
   viewInfo(url: string): void {
